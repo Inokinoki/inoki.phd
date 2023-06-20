@@ -1,5 +1,5 @@
-- name: Markdown-HTML
-  uses: ZacJW/markdown-html-action@1.2.0
+- name: Convert Markdown to HTML
+  uses: jd-solanki/gh-action-md-to-html@v1.1.0
   with:
-    input_files: ["README.md"]
-    output_files: ["index.html"]
+    # Stringified Array of [Array of source md file & file to generate] (i.e. [ ["index.md", "index.html"], ["changelog.md", "changelog.html"]])
+    files: [ ["README.md", "index.html"] ]
