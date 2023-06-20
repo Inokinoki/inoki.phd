@@ -1,5 +1,13 @@
-- name: Convert Markdown to HTML
-  uses: jd-solanki/gh-action-md-to-html@v1.1.0
-  with:
-    # Stringified Array of [Array of source md file & file to generate] (i.e. [ ["index.md", "index.html"], ["changelog.md", "changelog.html"]])
-    files: [ ["README.md", "index.html"] ]
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Job:
+    runs-on: windows-latest
+    steps:
+      - name: Convert Markdown to HTML
+        uses: natescherer/markdown-to-html-with-github-style-action@v1
+        with:
+          path: README.md,index.md
+          outputpath: out
