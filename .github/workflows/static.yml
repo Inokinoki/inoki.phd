@@ -1,0 +1,14 @@
+name: Test tag dispatch
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo something
+        run: echo "I am triggered."
